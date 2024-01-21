@@ -1,0 +1,74 @@
+
+// Currency Strength Meter AI
+// Developer's site: forexroboteasy.com
+// Development by: Forex Robot Easy Team
+
+// Import necessary libraries
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Define constants
+#define NUM_CURRENCIES 4
+#define MAX_DATA_SIZE 1000
+
+// Structure to store currency data
+typedef struct {
+    char name[10];
+    float strength;
+} Currency;
+
+// Function to calculate currency strength
+float calculateCurrencyStrength(float data[], int size) {
+    // Implement AI-based machine learning algorithm here
+    // Use real-time market data to calculate currency strength
+    // Return the calculated strength value
+    return 0.0;
+}
+
+// Function to recommend top tradeable currencies
+void recommendTradeableCurrencies(Currency currencies[], int size) {
+    // Implement proprietary system here to recommend top 4 currencies
+    // Update the strength value of each currency accordingly
+}
+
+// Function to process real-time data and update currency strength
+void processData(float data[], Currency currencies[], int size) {
+    float strength;
+
+    // Implement real-time data processing and analysis here
+    // Call calculateCurrencyStrength() to calculate currency strength
+    strength = calculateCurrencyStrength(data, size);
+
+    // Update the strength value of each currency
+    for (int i = 0; i < size; i++) {
+        currencies[i].strength = strength;
+    }
+}
+
+int main() {
+    float marketData[MAX_DATA_SIZE];
+    Currency currencies[NUM_CURRENCIES];
+
+    // Read market data from a source (e.g., API or file)
+    // Store the data in marketData array
+
+    // Initialize currencies
+    strcpy(currencies[0].name, 'USD');
+    strcpy(currencies[1].name, 'EUR');
+    strcpy(currencies[2].name, 'GBP');
+    strcpy(currencies[3].name, 'JPY');
+
+    // Process real-time data and update currency strength
+    processData(marketData, currencies, NUM_CURRENCIES);
+
+    // Recommend top tradeable currencies
+    recommendTradeableCurrencies(currencies, NUM_CURRENCIES);
+
+    // Display the currency strength and recommendations
+    for (int i = 0; i < NUM_CURRENCIES; i++) {
+        printf('%s: %.2f\n', currencies[i].name, currencies[i].strength);
+    }
+
+    return 0;
+}
